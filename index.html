@@ -9,15 +9,15 @@
 		<link rel="stylesheet" href="style.css" />
 		<link rel="stylesheet" href="background.css" />
 		<link rel="icon" type="image/x-icon" href="public/images/favicon.png" />
+		<script src="index.js" defer></script>
 		<script src="scroll-timeline.js" defer></script>
+		<script src="accordion.js" defer></script>
 	</head>
 	<body>
 		<div id="background">
 			<!-- <img id="paper" src="public/images/paper.jpeg" alt="" /> -->
 			<div id="grain"></div>
 		</div>
-		<script src="index.js"></script>
-		<script src="accordion.js" defer></script>
 		<section id="home">
 			<img class="home-background parallax" src="public/images/home-background.jpg" alt="Konrad and Maggie" id="home-image" />
 
@@ -38,6 +38,8 @@
 		</section>
 		<header>
 			<nav>
+				<input class="mobile-toggle" type="checkbox" id="menu-open" />
+				<label for="menu-open" class="mobile-toggle-label"></label>
 				<ul>
 					<li>
 						<a class="header-link" href="#home">Home</a>
@@ -51,9 +53,8 @@
 						<a class="header-link" href="#countdown">When & Where</a>
 					</li>
 
-					<li>
-						<img class="header-image" src="public/images/section-flower-1.gif" alt="" />
-					</li>
+					<img class="header-image" src="public/images/section-flower-1.gif" alt="" />
+					<img class="header-heart small-show" src="public/images/heart-solid.svg" alt="" />
 					<li>
 						<a class="header-link" href="#faq">Q&A</a>
 					</li>
@@ -106,7 +107,7 @@
 				<h1>June 1st, 2024</h1>
 				<p>Not long until the big day!</p>
 				<div class="countdown-clock">
-					<div class="digit-numbers">
+					<div class="digit-numbers months">
 						<div class="digit-label">
 							<div id="months-1" class="digit-wrapper" data-index="0">
 								<div class="digit">0</div>
@@ -136,7 +137,7 @@
 						<div class="digit-break"></div>
 						<div class="digit-noun">Months</div>
 					</div>
-					<div class="digit-numbers">
+					<div class="digit-numbers days">
 						<div class="digit-label">
 							<div id="days-1" class="digit-wrapper" data-index="0">
 								<div class="digit">0</div>
@@ -166,7 +167,7 @@
 						<div class="digit-break"></div>
 						<div class="digit-noun">Days</div>
 					</div>
-					<div class="digit-numbers">
+					<div class="digit-numbers hours">
 						<div class="digit-label">
 							<div id="hours-1" class="digit-wrapper" data-index="0">
 								<div class="digit">0</div>
@@ -196,7 +197,7 @@
 						<div class="digit-break"></div>
 						<div class="digit-noun">Hours</div>
 					</div>
-					<div class="digit-numbers">
+					<div class="digit-numbers minutes">
 						<div class="digit-label">
 							<div id="minutes-1" class="digit-wrapper" data-index="0">
 								<div class="digit">0</div>
@@ -226,7 +227,7 @@
 						<div class="digit-break"></div>
 						<div class="digit-noun">Minutes</div>
 					</div>
-					<div class="digit-numbers">
+					<div class="digit-numbers seconds">
 						<div class="digit-label">
 							<div id="seconds-1" class="digit-wrapper" data-index="0">
 								<div class="digit">0</div>
@@ -289,9 +290,11 @@
 					</div>
 					<iframe
 						id="wedding-map"
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5125.202860761667!2d-78.23341764733537!3d44.280615789732394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d5f3b3401c716d%3A0x1135093a98845798!2s2709%20Dillon%20Rd%2C%20Peterborough%2C%20ON%20K9J%206X8!5e1!3m2!1sen!2sca!4v1689198256266!5m2!1sen!2sca"
-						width="450"
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d267395.54752982926!2d-78.31677791396754!3d44.304544531968325!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d5f3b3401c716d%3A0x1135093a98845798!2s2709%20Dillon%20Rd%2C%20Peterborough%2C%20ON%20K9J%206X8!5e1!3m2!1sen!2sca!4v1704216436505!5m2!1sen!2sca"
+						width="600"
 						height="450"
+						style="border: 0"
+						allowfullscreen=""
 						loading="lazy"
 						referrerpolicy="no-referrer-when-downgrade"
 					></iframe>
@@ -326,13 +329,13 @@
 						<li>
 							GO Transit
 							<br />- If you want to take GO Transit you'll need to take the train to Oshawa and then take the bus to Peterborough. The bus will drop you off at the downtown bus terminal
-							which is walking distance to the Holiday Inn
+							where you could take various busses to get to your hotel.
 						</li>
 					</ul>
 					<h2>Getting to the Venue</h2>
 					<p>
-						There will be a shuttle bus running from downtown Peterborough to the venue. Pickup for the shuttle bus to the event will be at 12:30pm, and 1:00pm, and pickup for the busses
-						leaving the venue will be 10:00pm, 11:00pm, and 11:30pm.
+						There will be a shuttle bus running to and from the event, 2 busses going to and 3 returning from. Pickup for the shuttle bus to the event will be at 12:30pm, and 1:00pm, and
+						pickup for the busses leaving the venue will be 10:00pm, 11:00pm, and 11:30pm.
 					</p>
 					<p>The shuttle bus will be picking up and dropping off at the parking lot for the best western.</p>
 					<p>The bus carries 30 people at a time. There will be 2 trips to the event, and 3 trips from the event.</p>
@@ -433,7 +436,7 @@
 				<h1>Our Engagement Story</h1>
 				<div class="engagement-block">
 					<div class="engagement-text">
-						<h2>The Decision</h2>
+						<h3>The Decision</h3>
 						<p class="scroll-reveal">
 							While attending Maggie's sister's wedding on December 17<sup>th</sup>, 2022. Seeing the celebration of everyone there, and the bond that Amy and Brennan shared, Konrad
 							thought 'I wanna do this'. <br /><br />
@@ -447,7 +450,7 @@
 					<img class="engagement-image fade-in" src="public/images/engagement-2.jpg" alt="" />
 					<div class="engagement-divider"><img class="engagement-heart" src="public/images/heart-solid.svg" alt="" /></div>
 					<div class="engagement-text">
-						<h2>The Adventure</h2>
+						<h3>The Adventure</h3>
 						<p class="scroll-reveal">
 							Konrad saved up all his money and bought the ring. When they took their annual bike trip to Victoria BC, in June, Konrad knew he was going to propose. Eager for what
 							awaited them in the future they cycled on.<br /><br />But Maggie was completely unaware that this trip would change her life forever.
@@ -456,7 +459,7 @@
 				</div>
 				<div class="engagement-block">
 					<div class="engagement-text">
-						<h2>The Escape</h2>
+						<h3>The Escape</h3>
 						<p class="scroll-reveal">
 							They found themselves trapped in a dark, haunted, escape room. The only way out was to solve puzzles, but when they got to the final room they found a locked chest. Opening
 							the chest revealed a small velvet box. Konrad quickly grabbed got down on one knee and asked Maggie to marry him. <br /><br />Maggie said yes, and they escaped the room.
@@ -469,7 +472,7 @@
 					<img class="engagement-image fade-in" src="public/images/engagement-4.jpg" alt="" />
 					<div class="engagement-divider"><img class="engagement-heart" src="public/images/heart-solid.svg" alt="" /></div>
 					<div class="engagement-text">
-						<h2>The Celebration</h2>
+						<h3>The Celebration</h3>
 						<p class="scroll-reveal">
 							To celebrate the two went to dine at the finest restaurant in all of Victoria, Aura Waterfront. They had a wonderful meal, ordering everything on the menu and discovering
 							their love of oysters. Afterwards they went outside to enjoy the sunset and took a water taxi across the bay back to their stay.<br /><br />

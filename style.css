@@ -52,60 +52,63 @@ section {
 	max-width: 200px;
 }
 
-.parallax {
-	animation: parallax-banner 1s linear both;
-	animation-timeline: view();
-	animation-range-start: cover;
-	object-fit: cover;
-	/* object-position: bottom; */
-}
-
-@keyframes parallax-banner {
-	0% {
-		/* transform: translateY(0); */
-		object-position: 0;
-		/* scale: 1; */
+/* support animation-timeline */
+@supports (animation-timeline: view()) {
+	.parallax {
+		animation: parallax-banner 1s linear both;
+		animation-timeline: view();
+		animation-range-start: cover;
+		object-fit: cover;
+		/* object-position: bottom; */
 	}
-	100% {
-		/* scale: 1.2; */
-		object-position: 0 10%;
+
+	@keyframes parallax-banner {
+		0% {
+			/* transform: translateY(0); */
+			object-position: 0;
+			/* scale: 1; */
+		}
+		100% {
+			/* scale: 1.2; */
+			object-position: 0 0%;
+		}
 	}
-}
 
-.fade-in {
-	animation: fade-in 1s ease-in-out both;
-	animation-timeline: view();
-	animation-range-start: cover;
-	animation-range-end: 500px;
-}
-
-@keyframes fade-in {
-	0% {
-		scale: 0.8;
-		opacity: 0;
+	.fade-in {
+		animation: fade-in 1s ease-in-out both;
+		animation-timeline: view();
+		animation-range-start: cover;
+		animation-range-end: 500px;
 	}
-	100% {
-		scale: 1;
-		opacity: 1;
+
+	@keyframes fade-in {
+		0% {
+			scale: 0.8;
+			opacity: 0;
+		}
+		100% {
+			scale: 1;
+			opacity: 1;
+		}
 	}
-}
 
-.scroll-reveal {
-	display: inline;
-	color: hsl(0 0% 0% / 0.2);
-	background-clip: text;
-	background-image: linear-gradient(black, black);
-	background-size: 0% 100%;
-	background-repeat: no-repeat;
-	animation: scroll-reveal linear forwards;
-	animation-timeline: view();
-	animation-range-start: cover;
-	animation-range-end: 300px;
-}
+	.scroll-reveal {
+		display: inline;
+		color: hsl(0 0% 0% / 0.2);
+		background-clip: text;
+		background-image: linear-gradient(black, black);
+		background-size: 0% 100%;
+		background-repeat: no-repeat;
+		animation: scroll-reveal linear forwards;
+		animation-timeline: view();
+		animation-range-start: cover;
+		animation-range-end: 300px;
+	}
 
-@keyframes scroll-reveal {
-	to {
-		background-size: 100% 100%;
+	@keyframes scroll-reveal {
+		to {
+			background-size: 100% 100%;
+		}
 	}
 }
 
@@ -175,6 +178,7 @@ header nav ul li {
 	align-items: center;
 	justify-content: center;
 	gap: 75px;
+	overflow: clip;
 }
 
 .home-name {
@@ -187,8 +191,10 @@ header nav ul li {
 
 .home-image {
 	position: relative;
+	aspect-ratio: 1/1;
 	width: 400px;
-	height: 400px;
+	max-width: calc(100vw - 100px);
+
 	border-radius: var(--border-radius);
 }
 
@@ -206,14 +212,15 @@ header nav ul li {
 	left: 50%;
 	animation: flower_rotate 425s infinite linear;
 	transform-origin: 50% 50%;
-	margin: calc(-50% - 50px);
-	width: 500px;
+	margin: calc(-50%);
+	width: calc(100%);
 }
 .home-profile {
-	width: 400px;
+	width: calc(100% - 100px);
 	clip-path: circle(50% at 50% 50%);
 	object-fit: cover;
 	object-position: center calc(50% - 50px);
+	margin: 50px;
 }
 
 @keyframes flower_rotate {
@@ -243,6 +250,7 @@ header nav ul li {
 
 .couple-image {
 	max-width: 100%;
+	height: 100%;
 	aspect-ratio: 1/1;
 	object-fit: cover;
 }
@@ -307,8 +315,11 @@ header nav ul li {
 		height: 100vh; */
 
 	padding-top: 5rem;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	/* display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	gap: 1rem;
 
 	font-family: 'dancing script', cursive;
@@ -634,6 +645,9 @@ details[open] summary img {
 .engagement-content h1 {
 	margin-bottom: 4rem;
 }
+.engagement-content h2 {
+	text-align: center;
+}
 
 .engagement-block {
 	display: grid;
@@ -664,6 +678,7 @@ details[open] summary img {
 
 .engagement-image {
 	max-width: 100%;
+	height: 100%;
 	aspect-ratio: 1/1;
 	object-fit: cover;
 	border-radius: var(--border-radius);
@@ -706,11 +721,12 @@ details[open] summary img {
 	margin-bottom: 1rem;
 }
 
-.photo-blurb p {
-	color: hsl(0 0% 100% / 0.2);
-	background-image: linear-gradient(white, white);
+@supports (animation-timeline: view()) {
+	.photo-blurb p {
+		color: hsl(0 0% 100% / 0.2);
+		background-image: linear-gradient(white, white);
+	}
 }
-
 .bridal-content {
 	display: flex;
 	flex-direction: column;
@@ -745,7 +761,10 @@ details[open] summary img {
 }
 
 .bridal-card img {
+	width: 100%;
 	max-width: 100%;
+	height: 100%;
+	max-height: 100%;
 	aspect-ratio: 1/1;
 	object-fit: cover;
 	border-radius: var(--border-radius);
@@ -796,4 +815,211 @@ footer {
 }
 .footer-link a:hover {
 	text-decoration: underline;
+}
+
+.mobile-toggle,
+.mobile-toggle-label {
+	display: none;
+}
+
+.small-show {
+	display: none;
+}
+
+/* max width 800px */
+@media screen and (max-width: 800px) {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: 2rem;
+		text-align: center;
+	}
+	section {
+		scroll-margin-top: 0;
+	}
+	.small-show {
+		display: block;
+	}
+	.countdown-clock {
+		--size: 2rem;
+	}
+	#wedding-map {
+		display: none;
+	}
+	.home-content {
+		flex-direction: column;
+		gap: 3rem;
+	}
+	.home-name {
+		text-align: center;
+		order: -1;
+	}
+	.home-name:first-child {
+		text-align: center;
+	}
+	.home-image {
+		width: 100%;
+		max-width: 300px;
+	}
+	.couple-grid {
+		grid-template-columns: 1fr;
+	}
+	.couple-content {
+		text-align: center;
+	}
+	.couple-content:last-of-type {
+		text-align: center;
+		order: 1;
+	}
+	.couple-blurb {
+		margin: 2rem auto 0 auto;
+	}
+	.countdown-clock {
+		width: 100%;
+		font-size: 2.5rem;
+	}
+	.countdown-content h1 {
+		text-align: center;
+	}
+	.wedding-banner {
+		gap: 0;
+		padding: 0;
+		flex-direction: column;
+		align-items: center;
+	}
+	.wedding-info {
+		grid-template-columns: 1fr;
+		gap: 0;
+	}
+	.wedding-venue {
+		width: 100%;
+		aspect-ratio: 1/1;
+		object-fit: cover;
+		object-position: center;
+		margin-bottom: 1rem;
+	}
+	.wedding-info-left {
+		text-align: center;
+	}
+	.itinerary {
+		width: 100%;
+	}
+	.itinerary-row {
+		width: 100%;
+	}
+	.itinerary-title {
+		width: 100%;
+	}
+	.rsvp-form {
+		display: block;
+		padding: 1rem 0.5rem;
+	}
+
+	.rsvp-form * {
+		margin: 0.5rem 0;
+	}
+	.rsvp-header {
+		margin: 0 auto 1rem;
+	}
+
+	.rsvp-form button {
+		width: 100%;
+	}
+	.engagement-block {
+		grid-template-columns: 1fr;
+	}
+	.engagement-block .engagement-text {
+		text-align: center !important;
+	}
+	.engagement-block:nth-child(even) .engagement-text {
+		order: -1;
+	}
+	.engagement-divider {
+		display: none;
+	}
+	.photo-blurb {
+		margin: 2rem auto 1rem;
+		padding: 0 2rem;
+	}
+	.bridal-row {
+		grid-template-columns: 1fr;
+	}
+	.bridal-block {
+		margin: 1rem;
+	}
+
+	.header-image {
+		order: -1;
+		/* display: none; */
+	}
+	header nav ul {
+		flex-direction: column;
+		gap: 1rem;
+	}
+	header nav ul {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		height: 100vh;
+		width: 100vw;
+		background-color: rgba(255, 255, 255, 0.9);
+		transition: left 0.1s;
+	}
+	header nav ul li {
+		font-size: 1.2rem;
+	}
+	.mobile-menu {
+		position: fixed;
+		top: 0;
+		right: 0;
+		padding: 1rem;
+		z-index: 2;
+	}
+	.mobile-menu img {
+		width: 30px;
+		scale: -1 1;
+	}
+	.mobile-toggle,
+	.mobile-toggle-label {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		margin: 1rem;
+		z-index: 2;
+	}
+	.mobile-toggle {
+		display: none;
+	}
+	.mobile-toggle-label {
+		user-select: none;
+	}
+	.mobile-toggle-label {
+		cursor: pointer;
+		background-image: url('/public/images/menu.svg');
+		background-size: 30px;
+		background-repeat: no-repeat;
+		background-position: calc(50% + 12px) calc(50% + 12px);
+		width: 30px;
+		height: 30px;
+		z-index: 2;
+		top: -50px;
+		left: -50px;
+		width: 100px;
+		height: 100px;
+		background-color: white;
+		border-radius: 100%;
+		/* z-index: -1; */
+		/* box shadow */
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	}
+	.mobile-toggle:checked ~ .mobile-toggle-label {
+		background-image: url('/public/images/menu-close.svg');
+	}
+	.mobile-toggle:checked ~ ul {
+		left: 0;
+	}
 }

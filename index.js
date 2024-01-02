@@ -40,8 +40,12 @@ let interval = null;
 interval = setInterval(() => {
 	let gap = dateDiff(new Date('2024-06-01T00:00:00'), new Date());
 	months = gap.months.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false, timezone: 'America/New_York' });
+	// if (months == 0) {
+	// 	document.querySelector('.months').style.display = 'none';
+	// } else {
 	document.getElementById('months-1').dataset.index = months[0];
 	document.getElementById('months-2').dataset.index = months[1];
+	// }
 	days = gap.days.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false, timezone: 'America/New_York' });
 	document.getElementById('days-1').dataset.index = days[0];
 	document.getElementById('days-2').dataset.index = days[1];
@@ -56,4 +60,9 @@ interval = setInterval(() => {
 	document.getElementById('seconds-2').dataset.index = seconds[1];
 }, 1000);
 
-console.log("Admitedly, it's a cool website. The only javascript is to run the clock, animate the details opening, and a scroll-timeline polyfill. You sure can do a lot with modern css!");
+document.querySelectorAll('.header-link').forEach((link) => {
+	link.addEventListener('click', () => {
+		console.log('hello');
+		document.querySelector('.mobile-toggle').checked = false;
+	});
+});
