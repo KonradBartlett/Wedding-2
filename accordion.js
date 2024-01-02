@@ -1,6 +1,5 @@
 class Accordion {
 	constructor(el) {
-		console.log(el);
 		// Store the <details> element
 		this.el = el;
 		// Store the <summary> element
@@ -118,8 +117,6 @@ class Accordion {
 	}
 }
 
-console.log('hwhwo');
 document.querySelectorAll('details').forEach((el) => {
-	console.log(el);
 	new Accordion(el);
 });

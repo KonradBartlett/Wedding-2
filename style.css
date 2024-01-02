@@ -1,9 +1,6 @@
-/* @font-face {
-	font-family: 'marsha';
-	src: url('/public/font/marsha_belle_demo_version-webfont.eot');
-	src: url('/public/font/marsha_belle_demo_version-webfont.eot?#iefix') format('embedded-opentype'), url('/public/font/marsha_belle_demo_version-webfont.woff2') format('woff2'),
-		url('/public/font/marsha_belle_demo_version-webfont.woff') format('woff'), url('/public/font/marsha_belle_demo_version-webfont.ttf') format('truetype'),
-		url('/public/font/marsha_belle_demo_version-webfont.svg#marsha_belleregular') format('svg');
+@font-face {
+	font-family: 'dancing script';
+	src: url('/public/font/DancingScript.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -13,11 +10,11 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'marsha', sans-serif;
+	font-family: 'dancing script', sans-serif;
 	font-weight: normal;
 	font-style: normal;
 	font-size: 3rem;
-} */
+}
 :root {
 	--border-radius: 0.5rem;
 }
@@ -48,26 +45,67 @@ section {
 	scroll-margin-top: 7em;
 	width: min(90%, 800px);
 	margin: 0 auto;
-	/* border-left: 1px solid pink;
-	border-right: 1px solid pink; */
 	position: relative;
-
-	/* width: 90%;
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: 1fr 1fr; */
 }
 
 .section-flower {
 	max-width: 200px;
 }
 
+.parallax {
+	animation: parallax-banner 1s linear both;
+	animation-timeline: view();
+	animation-range-start: cover;
+	object-fit: cover;
+	/* object-position: bottom; */
+}
+
 @keyframes parallax-banner {
-	from {
-		object-position: 0 50px;
+	0% {
+		/* transform: translateY(0); */
+		object-position: 0;
+		/* scale: 1; */
 	}
+	100% {
+		/* scale: 1.2; */
+		object-position: 0 10%;
+	}
+}
+
+.fade-in {
+	animation: fade-in 1s ease-in-out both;
+	animation-timeline: view();
+	animation-range-start: cover;
+	animation-range-end: 500px;
+}
+
+@keyframes fade-in {
+	0% {
+		scale: 0.8;
+		opacity: 0;
+	}
+	100% {
+		scale: 1;
+		opacity: 1;
+	}
+}
+
+.scroll-reveal {
+	display: inline;
+	color: hsl(0 0% 0% / 0.2);
+	background-clip: text;
+	background-image: linear-gradient(black, black);
+	background-size: 0% 100%;
+	background-repeat: no-repeat;
+	animation: scroll-reveal linear forwards;
+	animation-timeline: view();
+	animation-range-start: cover;
+	animation-range-end: 300px;
+}
+
+@keyframes scroll-reveal {
 	to {
-		object-position: 0 -50px;
+		background-size: 100% 100%;
 	}
 }
 
@@ -128,9 +166,7 @@ header nav ul li {
 	z-index: -1;
 	width: 100%;
 	height: 100%;
-	filter: grayscale(38%) brightness(82%) saturate(76%);
-	-webkit-filter: grayscale(38%) brightness(82%) saturate(76%);
-	-moz-filter: grayscale(38%) brightness(82%) saturate(76%);
+	filter: saturate(66%);
 }
 
 .home-content {
@@ -176,6 +212,8 @@ header nav ul li {
 .home-profile {
 	width: 400px;
 	clip-path: circle(50% at 50% 50%);
+	object-fit: cover;
+	object-position: center calc(50% - 50px);
 }
 
 @keyframes flower_rotate {
@@ -241,11 +279,8 @@ header nav ul li {
 	left: 0;
 	z-index: -1;
 	width: 100%;
-	/* height: 100%; */
-	filter: grayscale(38%) brightness(82%) saturate(76%);
-
-	animation: parallax-banner infinite linear;
-	animation-timeline: view();
+	height: 100%;
+	filter: grayscale(38%) brightness(52%) saturate(76%);
 }
 .countdown-content {
 	display: flex;
@@ -275,6 +310,8 @@ header nav ul li {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	gap: 1rem;
+
+	font-family: 'dancing script', cursive;
 
 	--size: 3rem;
 	font-size: var(--size);
@@ -355,7 +392,7 @@ header nav ul li {
 	padding: 4rem 0 0;
 }
 
-.wedding-content p {
+.wedding-blurb {
 	max-width: 60ch;
 	text-align: center;
 	margin-top: 2rem;
@@ -399,9 +436,10 @@ header nav ul li {
 }
 
 #wedding-map {
-	background-color: white;
-	padding: 1rem;
+	/* background-color: white;
+	padding: 1rem; */
 	border: none;
+	border-radius: var(--border-radius);
 }
 
 .wedding-venue {
@@ -432,6 +470,10 @@ header nav ul li {
 	width: 50%;
 	text-align: center;
 	margin-bottom: 1rem;
+}
+
+.itinerary-title img {
+	display: inline;
 }
 
 .itinerary-row {
@@ -467,10 +509,14 @@ details:hover {
 	box-shadow: 0 -2px 0 black, 0 2px 0 black;
 }
 
-.content {
+details .content {
 	margin: 0 1rem 1rem 1rem;
 	padding: 0 1rem 0 1rem;
 	border-left: 1px solid black;
+}
+
+details .content p {
+	margin-bottom: 0.5rem;
 }
 
 summary {
@@ -508,10 +554,8 @@ details[open] summary img {
 	left: 0;
 	z-index: -1;
 	width: 100%;
-	/* height: 100%; */
+	height: 100%;
 	filter: grayscale(38%) brightness(82%) saturate(76%);
-	animation: parallax-banner infinite linear;
-	animation-timeline: view();
 }
 
 .rsvp-header {
@@ -553,7 +597,7 @@ details[open] summary img {
 }
 .rsvp-label {
 	left: calc(2px + 1ch);
-	top: 50%;
+	top: 1rem;
 	transform: translate(0, -50%);
 	pointer-events: none;
 	position: absolute;
@@ -638,11 +682,9 @@ details[open] summary img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	/* object-position: bottom; */
+	object-position: center;
 
 	filter: grayscale(38%) brightness(82%) saturate(76%);
-	animation: parallax-banner infinite linear;
-	animation-timeline: view();
 }
 
 .photo-content {
@@ -658,10 +700,15 @@ details[open] summary img {
 	margin-bottom: 2rem;
 }
 
-.photo-content p {
+.photo-blurb {
 	max-width: 60ch;
 	text-align: center;
 	margin-bottom: 1rem;
+}
+
+.photo-blurb p {
+	color: hsl(0 0% 100% / 0.2);
+	background-image: linear-gradient(white, white);
 }
 
 .bridal-content {
@@ -727,8 +774,6 @@ footer {
 	object-position: center calc(50% - 30px);
 
 	filter: grayscale(38%) brightness(82%) saturate(76%);
-	animation: parallax-banner infinite linear;
-	animation-timeline: view();
 }
 
 .footer-header {

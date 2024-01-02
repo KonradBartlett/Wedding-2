@@ -56,35 +56,4 @@ interval = setInterval(() => {
 	document.getElementById('seconds-2').dataset.index = seconds[1];
 }, 1000);
 
-console.log('gho');
-
-// function getOffset(el) {
-// 	const rect = el.getBoundingClientRect();
-// 	return {
-// 		left: rect.left + window.scrollX,
-// 		top: rect.top + window.scrollY,
-// 		bottom: rect.bottom + window.scrollY,
-// 	};
-// }
-
-// let section = document.querySelector('#wedding');
-// let paths = document.querySelectorAll('path');
-
-// const fillSvgPaths = () => {
-// 	let scrollPercentage = (window.scrollY - getOffset(section).top + 0.9 * section.scrollHeight) / section.scrollHeight;
-// 	paths.forEach((path) => {
-// 		let pathLength = path.getTotalLength();
-// 		path.style.strokeDasharray = pathLength;
-// 		const offset = pathLength - scrollPercentage * pathLength;
-// 		if (offset > 0) {
-// 			path.style.strokeDashoffset = `${offset}`;
-// 		} else if (offset < 0) {
-// 			return;
-// 		} else {
-// 			path.style.strokeDashoffset = 10000;
-// 		}
-// 	});
-// };
-
-// fillSvgPaths();
-// document.addEventListener('scroll', fillSvgPaths);
+console.log("Admitedly, it's a cool website. The only javascript is to run the clock, animate the details opening, and a scroll-timeline polyfill. You sure can do a lot with modern css!");

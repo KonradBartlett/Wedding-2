@@ -9,19 +9,21 @@
 		<link rel="stylesheet" href="style.css" />
 		<link rel="stylesheet" href="background.css" />
 		<link rel="icon" type="image/x-icon" href="public/images/favicon.png" />
+		<script src="scroll-timeline.js" defer></script>
 	</head>
 	<body>
 		<div id="background">
-			<div id="paper"></div>
+			<!-- <img id="paper" src="public/images/paper.jpeg" alt="" /> -->
 			<div id="grain"></div>
 		</div>
 		<script src="index.js"></script>
 		<script src="accordion.js" defer></script>
 		<section id="home">
-			<img class="home-background" src="public/images/home-background.jpg" alt="Konrad and Maggie" id="home-image" />
+			<img class="home-background parallax" src="public/images/home-background.jpg" alt="Konrad and Maggie" id="home-image" />
+
 			<div class="home-content">
 				<div class="home-name">
-					<h2>Konrad</h2>
+					<h2>Maggie</h2>
 					<p>Save The Date</p>
 				</div>
 				<div class="home-image">
@@ -29,7 +31,7 @@
 					<img class="home-flowers" src="public/images/home-flowers.png" alt="" />
 				</div>
 				<div class="home-name">
-					<h2>Maggie</h2>
+					<h2>Konrad</h2>
 					<p>June 1<sup>st</sup>, 2024</p>
 				</div>
 			</div>
@@ -69,32 +71,36 @@
 		<section id="couple">
 			<img class="couple-header" src="public/images/couple-header.gif" alt="Mr & Mrs" />
 			<div class="couple-grid">
-				<img class="couple-image" src="public/images/couple-groom.jpg" alt="" />
+				<img class="couple-image fade-in" src="public/images/couple-groom.jpg" alt="" />
 				<div class="couple-content">
-					<h1>Konrad</h1>
-					<p>We met in 2015 at the University of Waterloo. We were both in the same program, and had a few classes together. We started dating in 2016, and have been together ever since.</p>
-					<p>
-						We moved in together in 2018, and have been living together ever since. We have a cat named Luna, and a dog named Hugo. We're both very excited to be getting married, and can't
-						wait to celebrate with all of our friends and family.
-					</p>
+					<h1>Hi! I'm Konrad.</h1>
+					<div>
+						<p class="scroll-reveal">
+							I'm a software developer, and I love to build things. I'm a big fan of video games, and I love to play board games with friends. I'm also a big fan of the outdoors, taking
+							walks with Maggie, and going on bike rides.
+						</p>
+					</div>
 				</div>
 				<div class="couple-content">
-					<h1>Maggie</h1>
-					<p>We met in 2015 at the University of Waterloo. We were both in the same program, and had a few classes together. We started dating in 2016, and have been together ever since.</p>
-					<p>
-						We moved in together in 2018, and have been living together ever since. We have a cat named Luna, and a dog named Hugo. We're both very excited to be getting married, and can't
-						wait to celebrate with all of our friends and family.
-					</p>
+					<h1>Hello! I am Maggie.</h1>
+					<div>
+						<p class="scroll-reveal">
+							I am a librarian, and I love to read things. If I'm not reading something then I'm probably baking delicious goods, or spending time with my family. I love organizing
+							things and and playing games with everyone, I read 166 books in 2023!
+						</p>
+					</div>
 				</div>
-				<img class="couple-image" src="public/images/couple-bride.jpg" alt="" />
+				<img class="couple-image fade-in" src="public/images/couple-bride.jpg" alt="" />
 			</div>
-			<p class="couple-blurb">
-				We met in 2018 at Trent University. We were both in the same program, and had a few classes together. We started dating a week after we met, and have been inseparable ever since. We're
-				both very excited to be getting married, and can't wait to celebrate with all our friends and family.
-			</p>
+			<div class="couple-blurb">
+				<p class="scroll-reveal">
+					We met in 2018 at Trent University. We were both in the same program, and had a few classes together. We started dating a week after we met, and have been inseparable ever since.
+					We're both very excited to be getting married, and can't wait to celebrate with all our friends and family.
+				</p>
+			</div>
 		</section>
 		<section id="countdown">
-			<img class="countdown-background" src="public/images/countdown-background.jpg" alt="" />
+			<img class="countdown-background parallax" src="public/images/countdown-background.jpg" alt="" />
 			<div class="countdown-content">
 				<img class="countdown-header" src="public/images/countdown-header.gif" alt="" />
 				<h1>June 1st, 2024</h1>
@@ -256,8 +262,12 @@
 		<section id="wedding">
 			<div class="wedding-content">
 				<img class="section-flower" src="public/images/wedding-header.gif" alt="Wedding Details" />
-				<h3>When & Where</h3>
-				<p>Our ceremony and reception will be held at Farmhill Weddings. A picturesque barn set in a backdrop of fields and nature. Described by Monika as: "this is stunning".</p>
+				<!-- <h3>When & Where</h3> -->
+				<div class="wedding-blurb">
+					<p class="scroll-reveal">
+						Our ceremony and reception will be held at Farmhill Weddings. A picturesque barn set in a backdrop of fields and nature. Described by Monika as: "this is stunning".
+					</p>
+				</div>
 				<div class="wedding-banner">
 					<div>June 1<sup>st</sup>, 2024</div>
 					<div class="banner-divider"></div>
@@ -271,7 +281,7 @@
 					<div class="wedding-info-left">
 						<img class="wedding-venue" src="public/images/venue.jpg" alt="Photo of the hall at farmhill weddings" />
 						<h3>Farmhill Weddings</h3>
-						<a href="https://goo.gl/maps/DqnfSq376tAP4vk86">
+						<a href="https://goo.gl/maps/DqnfSq376tAP4vk86" target="_blank">
 							2709 Dillon Road Keene
 							<br />
 							ON K9J 6X8
@@ -286,7 +296,7 @@
 						referrerpolicy="no-referrer-when-downgrade"
 					></iframe>
 					<div class="itinerary">
-						<a class="itinerary-title" href="public/files/schedule.pdf" target="_blank">Itinerary</a>
+						<a class="itinerary-title" href="public/files/schedule.pdf" target="_blank">Itinerary 🔗</a>
 						<div class="itinerary-row"><span>Busses Arrive:</span> <span> 1:00pm - 1:30pm</span></div>
 						<div class="itinerary-row"><span>Ceremony: </span> <span>2:00pm</span></div>
 						<div class="itinerary-row"><span>Cocktail Hour:</span> <span> 3:00pm</span></div>
@@ -302,12 +312,12 @@
 			<details class="accordion">
 				<summary><span>Accommodation</span><img src="public/images/chevron-right.svg" alt="" /></summary>
 				<div class="content">
-					<p>We have a deal with the Best Western located: . When booking your room you can mention the secret code "big hugo" for a discount on rooms.</p>
+					<h2>Best Western</h2>
+					<p>We have a deal with the Best Western located: . When booking your room you can mention that you are with the "Kikkert Bartlett Party" for a discount on rooms.</p>
 				</div>
 			</details>
 			<details class="accordion">
 				<summary><span>Transportation</span><img src="public/images/chevron-right.svg" alt="" /></summary>
-
 				<div class="content">
 					<h2>Getting to Peterborough</h2>
 					<p>There are a number of ways to get to Peterborough, but the most common are:</p>
@@ -320,10 +330,12 @@
 						</li>
 					</ul>
 					<h2>Getting to the Venue</h2>
-					<p>There will be a shuttle bus running from downtown Peterborough to the venue. The shuttle bus will be running to the event from DETERMIND TIME, and from the event from.</p>
-					<p>The shuttle bus will be picking up and dropping off at DETERMINE LOCATION.</p>
-					<p>The bus carries 30 people at a time, so there will be 3 trips to the event, and 3 trips from the event. You can find times for the trips in the schedule below</p>
-					<p>You can book tickets for the shuttle bus here: <a href="https://pascalbusco.ca/events/">Pascal Bus co</a></p>
+					<p>
+						There will be a shuttle bus running from downtown Peterborough to the venue. Pickup for the shuttle bus to the event will be at 12:30pm, and 1:00pm, and pickup for the busses
+						leaving the venue will be 10:00pm, 11:00pm, and 11:30pm.
+					</p>
+					<p>The shuttle bus will be picking up and dropping off at the parking lot for the best western.</p>
+					<p>The bus carries 30 people at a time. There will be 2 trips to the event, and 3 trips from the event.</p>
 					<p>Peterborough does have Uber, Lyft, and Taxis, however the chances of them driving out to Keene at midnight on a Saturday are very unlikely.</p>
 					<h2>Parking at the venue</h2>
 					<p>There is parking available at the venue, however we strongly encourage you to take the shuttle bus if you can.</p>
@@ -333,42 +345,72 @@
 			<details class="accordion">
 				<summary><span>Gifts</span><img src="public/images/chevron-right.svg" alt="" /></summary>
 				<div class="content">
-					<p>We're not expecting any gifts, but if you do want to get us something we have a registry at: .</p>
+					<h2>Reception</h2>
+					<p>While we are having our wedding in Ontario, we actually live in BC. So taking gifts back to BC would be difficulty.</p>
+					<p>We are having a presentation please.</p>
+					<p>While your presence is the greatest gift, if you wish to give more, we would appreciate a contribution towards the cost of the wedding and our honeymoon.</p>
 				</div>
 			</details>
 			<details class="accordion">
 				<summary><span>Dress Code</span><img src="public/images/chevron-right.svg" alt="" /></summary>
-				<div class="content"></div>
+				<div class="content">
+					<h2>Semi-Formal</h2>
+					<p>Remember, white is reserved for the bride. Please don't wear white!</p>
+					<br />
+					<p>We're going for a Semi-Formal dress code at the wedding. We want you to look nice but it's also going to be warm so wear nice looking breathable clothing.</p>
+					<p>The ceremony will be held on a grass lawn so wear appropriate footwear.</p>
+				</div>
 			</details>
 			<details class="accordion">
 				<summary><span>Children</span><img src="public/images/chevron-right.svg" alt="" /></summary>
 				<div class="content">
-					<p>Kids are welcome! Please indicate whether you are bring a child (under the age of 10) in the RSVP form, and we'll make sure they have a meals prepared just for them.</p>
+					<p>
+						Children are welcome! Please indicate whether you are bring a child (under the age of 10) in the notes field of the RSVP form, and we'll make sure they have a meals prepared
+						just for them.
+					</p>
+					<p>If you need any other help accommodating your child to this event, please reach out to either of us on Facebook, Email, or phone, and we'll do whatever we can to help.</p>
 				</div>
 			</details>
 			<details class="accordion">
 				<summary><span>Drinks</span><img src="public/images/chevron-right.svg" alt="" /></summary>
 				<div class="content">
+					<h2>Open Bar</h2>
 					<p>If you legally can, there will be an open bar! Beer, wine, cocktails, whatever you want you can just walk up to the bar and ask for it.</p>
+					<p>Drinks over $15, and shots will not be covered, this covers almost everything at the bar, but if you're planning on drinking some Macellan X you'll have to bring cash.</p>
+					<p>Please don't get sloshed before dinner.</p>
+					<p>If you are drinking, please make sure you have a way home. Whether it is the shuttle bus, or a designated driver, we want you to get home safe.</p>
 					<p>There will also be a number of non-alcoholic options available.</p>
-					<p>At TBDpm there will be a cocktail hour, and of course because we're on a farm some of the staff are going to bring out alpacas to hangout and chat with.</p>
+					<p>At TBDpm there will be a cocktail hour, and of course because we're on a farm some of the staff are going to bring out alpacas to hangout, chat, and take photos with.</p>
 				</div>
 			</details>
 			<details class="accordion">
 				<summary><span>Food</span><img src="public/images/chevron-right.svg" alt="" /></summary>
 				<div class="content">
+					<h2>Appetizers</h2>
 					<p>During cocktail hour there will be passed canapes.</p>
+					<h2>Dinner</h2>
 					<p>Dinner will be served as a buffet.</p>
-					<p>After dinner Tea & Coffee will be available, as well as a dessert buffet.</p>
 					<p>
-						Vegan, Vegetarian, and Gluten-Free options will be available for dinner and labelled as such so you know what's safe. If you feel the need to inform us of any other dietary
+						Vegetarian, and Gluten-Free options will be available for dinner and labelled as such so you know what's safe. If you feel the need to inform us of any other dietary
 						restrictions you may have, please use the corresponding field when filling out the RSVP form.
 					</p>
+					<h2>Dessert</h2>
+					<p>After dinner Tea & Coffee will be available, as well as a dessert buffet.</p>
+				</div>
+			</details>
+			<details class="accordion">
+				<summary><span>Smoking</span><img src="public/images/chevron-right.svg" alt="" /></summary>
+				<div class="content">
+					<h2>Cigarettes</h2>
+					<p>If you smoke there are designated places with butt disposal receptacles to throw out your butts. Please smoke at these locations.</p>
+					<p>If you're not smoking in the designated place, please do not litter your butt, instead bring it to one of the butt disposal receptacles or a garbage can.</p>
+					<h2>Weed</h2>
+					<p>You can smoke weed at the event! We won't be distributing weed in any way, but if you want to you can bring your own and smoke it in the designated smoking areas.</p>
 				</div>
 			</details>
 		</section>
 		<section id="rsvp">
-			<img class="rsvp-background" src="public/images/rsvp-background.jpg" alt="" />
+			<img class="rsvp-background parallax" src="public/images/rsvp-background.jpg" alt="" />
 			<div class="rsvp-content">
 				<form class="rsvp-form" action="https://formspree.io/f/mbjnjold" method="POST">
 					<img class="rsvp-header" src="public/images/rsvp-header.gif" alt="RSVP" />
@@ -392,21 +434,21 @@
 				<div class="engagement-block">
 					<div class="engagement-text">
 						<h2>The Decision</h2>
-						<p>
+						<p class="scroll-reveal">
 							While attending Maggie's sister's wedding on December 17<sup>th</sup>, 2022. Seeing the celebration of everyone there, and the bond that Amy and Brennan shared, Konrad
 							thought 'I wanna do this'. <br /><br />
 							Konrad knew the moment that this photo was taken that he was going to propse.
 						</p>
 					</div>
 					<div class="engagement-divider"><img class="engagement-heart" src="public/images/heart-solid.svg" alt="" /></div>
-					<img class="engagement-image" src="public/images/engagement-1.jpg" alt="" />
+					<img class="engagement-image fade-in" src="public/images/engagement-1.jpg" alt="" />
 				</div>
 				<div class="engagement-block">
-					<img class="engagement-image" src="public/images/engagement-2.jpg" alt="" />
+					<img class="engagement-image fade-in" src="public/images/engagement-2.jpg" alt="" />
 					<div class="engagement-divider"><img class="engagement-heart" src="public/images/heart-solid.svg" alt="" /></div>
 					<div class="engagement-text">
 						<h2>The Adventure</h2>
-						<p>
+						<p class="scroll-reveal">
 							Konrad saved up all his money and bought the ring. When they took their annual bike trip to Victoria BC, in June, Konrad knew he was going to propose. Eager for what
 							awaited them in the future they cycled on.<br /><br />But Maggie was completely unaware that this trip would change her life forever.
 						</p>
@@ -415,20 +457,20 @@
 				<div class="engagement-block">
 					<div class="engagement-text">
 						<h2>The Escape</h2>
-						<p>
-							They found themselves trapped in a dark, haunted, escape room. The only way out was to solve riddles, but when they got to the final room they found a locked chest. Opening
+						<p class="scroll-reveal">
+							They found themselves trapped in a dark, haunted, escape room. The only way out was to solve puzzles, but when they got to the final room they found a locked chest. Opening
 							the chest revealed a small velvet box. Konrad quickly grabbed got down on one knee and asked Maggie to marry him. <br /><br />Maggie said yes, and they escaped the room.
 						</p>
 					</div>
 					<div class="engagement-divider"><img class="engagement-heart" src="public/images/heart-solid.svg" alt="" /></div>
-					<img class="engagement-image" src="public/images/engagement-3.jpg" alt="" />
+					<img class="engagement-image fade-in" src="public/images/engagement-3.jpg" alt="" />
 				</div>
 				<div class="engagement-block">
-					<img class="engagement-image" src="public/images/engagement-4.jpg" alt="" />
+					<img class="engagement-image fade-in" src="public/images/engagement-4.jpg" alt="" />
 					<div class="engagement-divider"><img class="engagement-heart" src="public/images/heart-solid.svg" alt="" /></div>
 					<div class="engagement-text">
 						<h2>The Celebration</h2>
-						<p>
+						<p class="scroll-reveal">
 							To celebrate the two went to dine at the finest restaurant in all of Victoria, Aura Waterfront. They had a wonderful meal, ordering everything on the menu and discovering
 							their love of oysters. Afterwards they went outside to enjoy the sunset and took a water taxi across the bay back to their stay.<br /><br />
 							They spent the rest of the trip enjoying the city, and each other's company.
@@ -444,14 +486,16 @@
 			</div>
 		</section>
 		<section id="photos">
-			<img class="photo-background" src="public/images/photo-background.jpg" alt="" />
+			<img class="photo-background parallax" src="public/images/photo-background.jpg" alt="" />
 			<div class="photo-content">
 				<img class="section-flower" src="public/images/section-flower-2.gif" alt="" />
 				<h1>Photo Gallery</h1>
-				<p>
-					We're going to use Google Photos to create a shared album of photos from the wedding. If you want to join the album to add your photos or videos to it you can do so at the
-					following link:
-				</p>
+				<div class="photo-blurb">
+					<p class="scroll-reveal">
+						We're going to use Google Photos to create a shared album of photos from the wedding. If you want to join the album to add your photos or videos to it you can do so at the
+						following link:
+					</p>
+				</div>
 				<a class="button" href="https://photos.app.goo.gl/SS1PyH77EBHht68HA" target="_blank"> Google Photos Album </a>
 			</div>
 		</section>
@@ -463,14 +507,14 @@
 					<h2>Bridesmaids</h2>
 					<div class="bridal-row">
 						<div class="bridal-card">
-							<img class="bridal-image" src="public/images/bridal-julia.jpg" alt="Julia Puleo petting a goat" />
+							<img class="bridal-image fade-in" src="public/images/bridal-julia.jpg" alt="Julia Puleo petting a goat" />
 							<div class="bridal-text">
 								<h3>Maid of Honour</h3>
 								<p>Julia Puleo</p>
 							</div>
 						</div>
 						<div class="bridal-card">
-							<img class="bridal-image" src="public/images/bridal-amy.jpg" alt="Amy Way smiling" />
+							<img class="bridal-image fade-in" src="public/images/bridal-amy.jpg" alt="Amy Way smiling" />
 							<div class="bridal-text">
 								<h3>Bridesmaid</h3>
 								<p>Amy Way</p>
@@ -482,14 +526,14 @@
 					<h2>Groomsmen</h2>
 					<div class="bridal-row">
 						<div class="bridal-card">
-							<img class="bridal-image" src="public/images/bridal-bradley.jpg" alt="Bradley James in front of a jellyfish tank" />
+							<img class="bridal-image fade-in" src="public/images/bridal-bradley.jpg" alt="Bradley James in front of a jellyfish tank" />
 							<div class="bridal-text">
 								<h3>Best Man</h3>
 								<p>Bradley James</p>
 							</div>
 						</div>
 						<div class="bridal-card">
-							<img class="bridal-image" src="public/images/bridal-jadeon.jpg" alt="Jadeon Sheppard on a ferris wheel" />
+							<img class="bridal-image fade-in" src="public/images/bridal-jadeon.jpg" alt="Jadeon Sheppard on a ferris wheel" />
 							<div class="bridal-text">
 								<h3>Groomsman</h3>
 								<p>Jadeon Sheppard</p>
@@ -500,7 +544,7 @@
 			</div>
 		</section>
 		<footer>
-			<img class="footer-background" src="public/images/footer-background.jpg" alt="" />
+			<img class="footer-background parallax" src="public/images/footer-background.jpg" alt="" />
 			<div class="footer-content">
 				<img class="footer-header" src="public/images/footer-header.gif" alt="" />
 				<div class="footer-link">Website by: <a href="https://konradbartlett.com" target="_blank">Konrad Bartlett</a></div>
