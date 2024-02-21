@@ -66,3 +66,5 @@ document.querySelectorAll('.header-link').forEach((link) => {
 		document.querySelector('.mobile-toggle').checked = false;
 	});
 });
+
+console.log('Hello!');
