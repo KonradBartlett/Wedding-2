@@ -111,17 +111,18 @@ td {
 		background-image: linear-gradient(black, black);
 		background-size: 0% 100%;
 		background-repeat: no-repeat;
-		animation: scroll-reveal linear forwards;
+		background-size: 100% 100%;
+		/* animation: scroll-reveal linear forwards;
 		animation-timeline: view();
 		animation-range-start: cover;
-		animation-range-end: 300px;
+		animation-range-end: 300px; */
 	}
 
-	@keyframes scroll-reveal {
+	/* @keyframes scroll-reveal {
 		to {
 			background-size: 100% 100%;
 		}
-	}
+	} */
 }
 
 header {
